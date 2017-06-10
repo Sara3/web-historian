@@ -10,15 +10,19 @@
   </form>
   <script>
 
-    document.getElementById('query-form').addEventListener('submit', function(event) {
+  document
+    .getElementById('query-form')
+    .addEventListener('submit', function(event) {
       event.preventDefault();
       let submittedUrl = document.getElementById('input-submit').value;
-      fs.appendFile('../' + archive.list, submittedUrl, function(err) {
-        if (err) { throw err; }
-        console.log('Saved (' + submittedUrl + ') to ' + '../' + archive.list);
-      });      
+      fs.appendFile('../' + archive.list, submittedUrl, function(err) { 
+        if (err) {
+          throw err;
+        } else {
+          console.log('Saved (' + submittedUrl + ') to ' + '../' + archive.list);
+      };      
       console.log('event', document.getElementById('input-submit').value);
-    });
+  });
 
   </script>
   <script src='/../http-helpers.js' />
