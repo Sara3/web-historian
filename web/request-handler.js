@@ -6,15 +6,16 @@ var fs = require('fs');
 
 exports.handleRequest = function (req, res) {
   //console.log('req', req, 'res', res);
- 
+
+
+//if get request from client and page exists in archive 
   fs.readFile(archive.paths.siteAssets + '/index.html', 'utf8', (err, data) => {
     if (err) {
       throw err;
-    } else {
-      console.log(data);
     }
+    res.end(data);
   });
-  res.end();
+  
 };
 
 //httpHelp.serveAssets('res', 'pagedata', 'callback function');

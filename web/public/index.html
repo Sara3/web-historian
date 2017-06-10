@@ -5,8 +5,17 @@
 </head>
 <body>
   Enter a URL here:
-  <form method="POST">
-    <input type="input" name="url"></input>
+  <form id="query-form" method="POST">
+    <input id='input-submit' type="input" name="url"></input>
   </form>
+  <script>
+
+    document.getElementById('query-form').addEventListener('submit', function(event) {
+      event.preventDefault();  
+      //console.log('event', document.getElementById('input-submit').value);
+    });
+
+  </script>
+
 </body>
 </html>
